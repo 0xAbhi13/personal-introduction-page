@@ -1,0 +1,770 @@
+/* ==========================================================
+   Veda Technology Internship — Task 2
+   Personal Introduction Page: Abhishek Shahaji Jadhav
+   Only HTML5 + CSS3. Beginner-friendly, commented code.
+   ========================================================== */
+
+/* ---------- 1. Colours & spacing (CSS custom properties) ---------- */
+:root {
+  --white: #ffffff;
+  --bg: #f4f8ff;            /* light blue page background */
+  --bg-soft: #eaf1fd;       /* slightly deeper blue for sections */
+  --navy: #1a2f5a;          /* main text */
+  --navy-light: #3a4f7e;    /* secondary text */
+  --muted: #5b6b8c;         /* muted text */
+  --accent: #e8722a;        /* orange accent */
+  --accent-dark: #c95a17;
+  --border: #dbe6f7;
+  --card-shadow: 0 4px 18px rgba(26, 47, 90, 0.08);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --max-width: 1080px;
+  --font: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+}
+
+/* ---------- 2. Base reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px; /* offset for sticky header */
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--navy);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+/* Accessibility: skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -60px;
+  background: var(--navy);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ---------- 3. Header / navigation ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: 0.85rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.brand-text {
+  color: var(--navy);
+}
+
+.site-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.site-nav a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  color: var(--navy-light);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover {
+  background: var(--bg-soft);
+  color: var(--navy);
+}
+
+.nav-cta {
+  background: var(--accent);
+  color: #fff !important;
+  margin-left: 0.35rem;
+}
+
+.nav-cta:hover {
+  background: var(--accent-dark) !important;
+}
+
+/* CSS-only mobile menu toggle */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.nav-toggle-label span {
+  width: 22px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+}
+
+/* ---------- 4. Hero ---------- */
+.hero {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-xl) 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.greeting {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  background: #fdf1e7;
+  border: 1px solid #f5d9bd;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  margin-bottom: var(--space-sm);
+}
+
+.greeting-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.role {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--navy-light);
+  margin-bottom: var(--space-sm);
+}
+
+.intro {
+  color: var(--muted);
+  max-width: 56ch;
+  margin-bottom: var(--space-md);
+  font-size: 1.05rem;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: var(--space-md);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.75rem 1.35rem;
+  border-radius: 10px;
+  font-size: 0.98rem;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #122344;
+}
+
+.btn-outline {
+  background: #fff;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.btn-outline:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+.hero-meta {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.hero-meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* Avatar (CSS initials — no image file needed) */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-wrap {
+  text-align: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2.5rem;
+  box-shadow: var(--card-shadow);
+  width: 100%;
+  max-width: 320px;
+}
+
+.profile-photo {
+  width: 220px;
+  height: 275px;
+  margin: 0 auto 1rem;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 16px;
+  border: 5px solid #fff;
+  outline: 3px solid var(--accent);
+  box-shadow: var(--card-shadow);
+}
+
+.avatar-caption {
+  font-weight: 700;
+  color: var(--navy-light);
+}
+
+/* ---------- 5. General sections ---------- */
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 0.4rem;
+}
+
+.section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  letter-spacing: -0.3px;
+  margin-bottom: 0.6rem;
+}
+
+.section-lead {
+  color: var(--muted);
+  max-width: 65ch;
+  margin-bottom: var(--space-md);
+  font-size: 1.02rem;
+}
+
+/* ---------- 6. About ---------- */
+.about {
+  background: var(--bg);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  color: #33456b;
+}
+
+.about-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  box-shadow: var(--card-shadow);
+}
+
+.about-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.85rem;
+}
+
+.about-card dl > div {
+  padding: 0.65rem 0;
+  border-top: 1px solid #edf2fc;
+}
+
+.about-card dt {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--muted);
+}
+
+.about-card dd {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.link-arrow {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.link-arrow:hover {
+  text-decoration: underline;
+}
+
+/* ---------- 7. Skills ---------- */
+.skills {
+  background: #fff;
+  border-block: 1px solid var(--border);
+}
+
+.skills-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.skill-group {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+
+.skill-group h3 {
+  font-size: 1.02rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.badge-foundational {
+  background: var(--navy);
+  color: #fff;
+}
+
+.badge-learning {
+  background: var(--accent);
+  color: #fff;
+}
+
+.skill-list {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.skill-name {
+  font-weight: 700;
+}
+
+.skill-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* Simple static skill bars (pure CSS) */
+.level {
+  height: 9px;
+  background: #dbe6f7;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.level span {
+  display: block;
+  height: 100%;
+  background: var(--navy);
+  border-radius: 999px;
+}
+
+.level-learning span {
+  background: var(--accent);
+}
+
+.learning-note {
+  margin-top: 1rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+  background: #fff;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+}
+
+/* ---------- 8. Hobbies ---------- */
+.hobbies {
+  background: var(--bg);
+}
+
+.hobby-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+
+.hobby {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  box-shadow: var(--card-shadow);
+}
+
+.hobby:hover {
+  border-color: var(--accent);
+}
+
+.hobby-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-soft);
+  color: var(--accent-dark);
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+}
+
+.hobby h3 {
+  font-size: 1.02rem;
+  margin-bottom: 0.35rem;
+}
+
+.hobby p {
+  font-size: 0.94rem;
+  color: var(--muted);
+}
+
+/* Last row: make 5 items look balanced on desktop */
+.hobby-grid > li:nth-child(4),
+.hobby-grid > li:nth-child(5) {
+  grid-column: span 1;
+}
+
+/* ---------- 9. Contact ---------- */
+.contact-box {
+  background: var(--navy);
+  color: #eaf1fd;
+  border-radius: 20px;
+  padding: var(--space-lg);
+  text-align: center;
+  box-shadow: var(--card-shadow);
+}
+
+.eyebrow-light {
+  color: #f5b47e;
+}
+
+.contact-box h2 {
+  color: #fff;
+}
+
+.contact-box .section-lead {
+  color: #c3d0e8;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  margin-bottom: var(--space-md);
+}
+
+.profile-links {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  text-align: left;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.profile-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #fff;
+  color: var(--navy);
+  text-decoration: none;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.profile-links a:hover {
+  outline: 3px solid var(--accent);
+}
+
+.profile-links span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.profile-links strong {
+  font-size: 0.98rem;
+}
+
+.profile-links small {
+  color: var(--muted);
+  font-size: 0.82rem;
+  word-break: break-all;
+}
+
+/* ---------- 10. Footer ---------- */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+.footer-inner {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.footer-sub {
+  font-size: 0.85rem;
+}
+
+/* ---------- 11. Responsive media queries ---------- */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .avatar-wrap {
+    max-width: 420px;
+    padding: 1.5rem;
+  }
+
+  .profile-photo {
+    width: 200px;
+    height: 250px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile-links {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .hero {
+    padding: 2.5rem 0;
+  }
+
+  /* Show hamburger, hide nav by default */
+  .nav-toggle-label {
+    display: flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    display: none;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.75rem 1rem 1rem;
+    gap: 0.15rem;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .nav-cta {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* Checkbox hack: open menu when checked */
+  .nav-toggle:checked ~ .site-nav {
+    display: block;
+  }
+
+  .header-inner {
+    position: relative;
+  }
+
+  .hobby-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-links {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .hero-buttons .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .skill-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .skill-note {
+    text-align: left;
+  }
+}
