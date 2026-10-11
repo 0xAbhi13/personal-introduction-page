@@ -21,10 +21,6 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1200&color=1A2F5A&center=true&vCenter=true&width=560&lines=Hello%2C+I%27m+Abhishek+Jadhav...;First-Year+BCA+%7C+Learning+Web+Development+%F0%9F%9A%80" alt="Greeting typing animation" />
 </div>
 
-> A complete, polished, responsive personal introduction page for **Abhishek Jadhav** — First-Year BCA student at Vidya Pratishthan's Institute of Information Technology (VIIT), Baramati, learning web development step by step.
->
-> Built with **only HTML5 + CSS3**. No frameworks, no JavaScript, no build tools. Just open `index.html`.
-
 <details>
 <summary><b>📖 Table of Contents (click to expand)</b></summary>
 
@@ -75,7 +71,6 @@ internship-task-2/
     └── favicon.svg     # Professional "AJ" monogram (navy + orange)
 ```
 
-> Note: the hero previously used a CSS-only "AJ" initials avatar — it now shows the real `assets/profile.jpg` photo, and the same monogram SVG is used for both the browser favicon and the navbar logo.
 
 ## 🚀 How to Run
 
@@ -102,7 +97,6 @@ No install or build step. ✨
 
 <div align="center">
 
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1000&color=1A2F5A&center=true&vCenter=true&width=520&lines=Keep+learning.+Keep+building.+%F0%9F%9A%80;Thanks+for+visiting!+⭐" alt="Thanks animation" />
 
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:E8722A,100:1A2F5A&height=120&section=footer" alt="Footer wave" />
 
