@@ -2,7 +2,7 @@
 
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1A2F5A,100:E8722A&height=170&section=header&text=Abhishek%20Jadhav&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Web%20Developer%20%7C%20BCA%20Student&descAlignY=62&descSize=17" alt="Abhishek Jadhav personal introduction header" />
 
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=E8722A&center=true&vCenter=true&width=640&lines=Veda+Technology+Internship+%E2%80%A2+Task+2%3A+Personal+Introduction;HTML5+%2B+CSS3+Only+%E2%80%A2+No+Frameworks+%E2%80%A2+No+JavaScript;Responsive+%E2%80%A2+Accessible+%E2%80%A2+Open+index.html+and+Done" alt="Typing introduction" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=E8722A&center=true&vCenter=true&width=640&lines=Veda+Technology+Internship+%E2%80%A2+Task+2;No+Frameworks+%E2%80%A2+No+JavaScript;Responsive+%E2%80%A2+Accessible+%E2%80%A2+Open+index.html+and+Done" alt="Typing introduction" />
 
   <p><b>Clean • Responsive • Accessible • Offline-ready</b></p>
 
